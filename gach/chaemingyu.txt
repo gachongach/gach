@@ -1,0 +1,4 @@
+error : non-fast-forward
+git pull origin master 해보고
+git --rebase git petch git merge 뭐시기
+다 했는데 왜 안돼죠
