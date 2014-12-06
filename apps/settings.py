@@ -12,5 +12,7 @@ class Config(object):
 
 class Production(Config):
     DEBUG = True
-    # CSRF_ENABLED = True
-    ADMIN = "lla@lla.com"
+    CSRF_ENABLED = False
+    #ADMIN = "zeros19861@gmail.com"
+    #mysql://username:password@server/db
+    #gach.cqesbxxoyeoo.us-west-2.rds.amazonaws.com:3306

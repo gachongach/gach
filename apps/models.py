@@ -29,3 +29,11 @@ class Reply(db.Model):
     user = db.relationship('User', backref=db.backref('user_id_reply', cascade='all, delete-orphan', lazy='dynamic'))
     author = db.Column(db.String(64), db.ForeignKey('user.id'))
 
+'''
+class joinedUsers(db.Model):
+    email = db.Column(db.String(255))
+
+class joiningUsers(db.Model):
+    email = db.Column(db.String(255))
+    code = db.Column(db.String(128))
+'''

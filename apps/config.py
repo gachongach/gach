@@ -4,6 +4,6 @@ class Config(object):
 class Production(Config):
 	debug = True
 	CSRF_ENABLED = False
-	ADMIN = "zeros19861@gmail.com"
-	SQLALCHEMY_DATABASE_URL = "'mysql+gaerdbms:///accusation?instance=owenahn:owen'"
+	#ADMIN = "zeros19861@gmail.com"
+	SQLALCHEMY_DATABASE_URL = "mysql://owen:Sksdhdnps86!@gach.cqesbxxoyeoo.us-west-2.rds.amazonaws.com/gach"
 	migration_directory = 'mig'
