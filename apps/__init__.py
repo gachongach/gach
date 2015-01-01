@@ -5,12 +5,8 @@ from flask.ext.script import Manager
 import os
 
 
-app = Flask('apps')
+app = Flask('gach')
 app.config.from_object('apps.config.Production')
-db = SQLAlchemy(app)
-
-manager = Manager(app)
-migrate = Migrate(app, db)
-manager.add_command('db', MigrateCommand)
-
+if __name__ == '__main__':
+    app.run()
 import controller, models
