@@ -5,6 +5,7 @@ import string
 from google.appengine.api import mail
 from models import User
 from apps import db
+import DAO
 
 
 @app.route('/')
@@ -25,19 +26,20 @@ def join():
 def user_join():
     new_id = request.form['new_id']
     new_pw = request.form['new_pw']
+    new_pwConfirm = request.form['new_pwConfirm']
     new_email = request.form['new_email']
 
-    user = User(
-        id=new_id,
-        pw=new_pw,
-        status=0,
-        score=0
-    )
+    if new_pw != new_pwConfirm:
+        return -1
 
-    db.session.add(user)
-    db.session.commit()
-    user_id = new_id
+    user = User(new_id, new_pw, 1, 0)
+
+    if DAO.emailCheck(new_email) == False:
+        return -1
+
+    DAO.join(user)
     uniqueCode = createJoinCode()
+
     '''
     joining = joiningUsers(
         email=new_email,
@@ -48,7 +50,6 @@ def user_join():
     #db.session.commit()
 
     sendEmail(new_email, new_id, uniqueCode)
-
     return render_template("index.html")
 
 def createJoinCode():

@@ -2,6 +2,7 @@
 models.py
 
 """
+'''
 from apps import db
 
 #
@@ -30,6 +31,7 @@ class Reply(db.Model):
     author = db.Column(db.String(64), db.ForeignKey('user.id'))
 
 '''
+'''
 class joinedUsers(db.Model):
     email = db.Column(db.String(255))
 
@@ -37,3 +39,9 @@ class joiningUsers(db.Model):
     email = db.Column(db.String(255))
     code = db.Column(db.String(128))
 '''
+class User():
+    def __init__(self, id, pw, status, score):
+        self.id = id
+        self.pw = pw
+        self.status = status
+        self.score = score

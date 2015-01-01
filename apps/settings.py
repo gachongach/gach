@@ -1,6 +1,8 @@
 import os
+import sys
 
 # from secret_keys import CSRF_SECRET_KEY, SESSION_KEY
+# db = MySQLdb.connect("localhost","testuser","test123","TESTDB" )
 
 
 class Config(object):
